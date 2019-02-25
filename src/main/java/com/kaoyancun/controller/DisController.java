@@ -25,7 +25,6 @@ public class DisController {
 
     @Autowired
     AchieveService achieveService;
-
     @Autowired
     DirectionSchoolService directionSchoolService;
 
