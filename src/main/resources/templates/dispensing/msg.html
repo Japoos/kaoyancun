@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>2019中国研究生入学考试(初试)排名查询系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="/css/dispensing/public.css">
+	<link rel="stylesheet" href="/css/dispensing/choice_school.css">
+	<link rel="stylesheet" href="/css/dispensing/msg.css">
+</head>
+<body>
+	<!-- 头部banner -->
+	<header></header>
+	<!-- 主体 -->
+	<section>
+		<div class="item">
+			<div class="name">
+				(<span id="schoolCode" th:text="${schoolCode}"></span>)<span th:text="${schoolName}"></span>
+			</div>
+			<div class="num">
+				已有2049 位同学提交成绩
+			</div>
+		</div>
+		<!-- 基本信息 -->
+		<div class="item">
+			<div class="title">
+				填写基本信息
+			</div>
+			<ul class="list">
+				<li>
+					<strong>专业</strong>
+					<input type="text" id="major" placeholder="输入专业名称" required class="major">
+				</li>
+				<li class="yxs"></li>
+				<li>
+					<strong>院系所</strong>
+					<input type="text" id="faculty" placeholder="输入专业后自动选择院系所" required>
+				</li>
+				<li>
+					<strong>姓名</strong>
+					<input type="text" id="uName" placeholder="输入你的姓名" required>
+				</li>
+			</ul>
+		</div>
+		<!-- 考试成绩 -->
+		<div class="item fine">
+			<div class="title">
+				填写考试成绩
+				<div class="fr">
+					总分：<em>- - -</em>
+				</div>
+			</div>
+			<ul class="list">
+				<li>
+					<strong>政治</strong>
+					<input type="text" id="politicalAch" placeholder="输入政治成绩" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" maxlength="3" oninput='if(this.value > 100){this.value=100};'>
+				</li>
+				<li>
+					<strong>外语</strong>
+					<input type="text" id="forLangAch" placeholder="输入外语成绩" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" maxlength="3" oninput='if(this.value > 100){this.value=100};'>
+				</li>
+				<li>
+					<strong>数学/专一</strong>
+					<input type="text" id="matOrMajorOneAch" placeholder="输入数学或专业一成绩" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" maxlength="3" oninput='if(this.value > 300){this.value=300};'>
+				</li>
+				<li>
+					<strong>专二(可空)</strong>
+					<input type="text" id="majorSecAch" placeholder="输入专业二成绩" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" maxlength="3" oninput='if(this.value > 300){this.value=300};'>
+				</li>
+			</ul>
+		</div>
+		<!-- 选择意向院校（选填） -->
+		<div class="item xt">
+			<div class="title">
+				选择意向院校（选填）
+			</div>
+			<ul class="list">
+				<li>
+					<strong style="width:30%; float:left">院校1(可选)</strong>
+					<select id="pro1" style="width:30%; float:left">
+						<option value="0" selected="selected">请选择省份</option>
+						<option th:each="province:${provinceList}" th:value="${province}" th:text="${province}">
+					</select>
+					<select id="sc1" style="width:40%; float:left">
+						<option>请选择院校</option>
+					</select>
+					<!--<input type="text" placeholder="输入意向调剂院校">-->
+				</li>
+				<li>
+					<strong style="width:30%; float:left">院校2(可选)</strong>
+					<select id="pro2" style="width:30%; float:left">
+						<option value="0"  selected="selected">请选择省份</option>
+						<option th:each="province:${provinceList}" th:value="${province}" th:text="${province}">
+					</select>
+					<select id="sc2" style="width:40%; float:left">
+						<option>请选择院校</option>
+					</select>
+					<!--<input type="text" placeholder="输入意向调剂院校">-->
+				</li>
+				<li>
+					<strong style="width:30%; float:left">院校3(可选)</strong>
+					<select id="pro3" style="width:30%; float:left">
+						<option  value="0" selected="selected">请选择省份</option>
+						<option th:each="province:${provinceList}" th:value="${province}" th:text="${province}">
+					</select>
+					<select id="sc3" style="width:40%; float:left">
+						<option>请选择院校</option>
+					</select>
+					<!--<input type="text" placeholder="输入意向调剂院校">-->
+				</li>
+			</ul>
+		</div>
+		<!-- 手机验证提示语 -->
+		<div class="item">
+			<div class="title">
+				为确保数据真实性，请通过手机短信验证
+			</div>
+			<ul class="list">
+				<li>
+					<strong>手机</strong>
+					<input type="text" id="uTel" placeholder="输入你的手机号码" class="phone" maxlength="11">
+				</li>
+				<li>
+					<strong>验证码</strong>
+					<input type="text" id="vmodle" placeholder="输入短信验证码" class="code">
+					<button class="yzm">获取验证码</button>
+				</li>
+				<li>
+					<em>QQ号（可选）</em>
+					<input type="text" id="uQq" placeholder="QQ验证入群获取最新复试信息">
+				</li>
+			</ul>
+		</div>
+		<div class="start-btn">
+			<a href='javascript:void(0);'>提交调剂意愿</a>
+		</div>
+		<div class="goback-btn">
+			<a href="/apps/dispensing/disschool">返回上一页</a>
+		</div>
+
+	</section>
+	<!-- 底部 -->
+	<footer>
+		<p>本服务由杭州知悟科技提供技术及内容支持</p>
+		<p>©2019 koudaitiku.com 浙ICP备15000135号-1</p>
+	</footer>
+	<script src='/js/jquery-1.11.2.min.js'></script>
+	<script src='/js/flexible.js'></script>
+	<script src='/js/msg.js'></script>
+</body>
+</html>

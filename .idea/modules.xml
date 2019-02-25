@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../调剂系统/DispensingDemo/DispensingDemo.iml" filepath="$PROJECT_DIR$/../调剂系统/DispensingDemo/DispensingDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kaoyancun.iml" filepath="$PROJECT_DIR$/kaoyancun.iml" />
+    </modules>
+  </component>
+</project>

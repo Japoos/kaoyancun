@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/kaoyancun?Unicode=true&characterEncoding=UTF-8
+    username: root
+    password: aPpuJaMqm1=&
+    type: com.alibaba.druid.pool.DruidDataSource

@@ -1,0 +1,20 @@
+body{background: #fff;}
+header{margin-top:0.937rem;}
+header .top{width:2.437rem;height: 2.437rem;margin:0 auto;background: url(/images/dispensing/ok.png) no-repeat;background-size: 100% 100%;}
+header .btm{margin:1rem auto;text-align: center;font-weight: bold;font-size: 20px;}
+section p{color: #999;font-size: 14px;text-align: center;margin-bottom: 0.2rem;}
+section .danger{text-align: center;margin:0.4rem auto 1rem;color: red;font-size:15px;}
+section .start-btn{width: 9.2rem;height: 1.2rem;margin:0.48rem auto 0.2rem;}
+section .start-btn a{display: block;width: 100%;height: 100%;background: #09bb07;-webkit-appearance: none;border:none;outline:none;color: #fff;font-size: 17px;border-radius: 5px;text-align: center;line-height: 1.2rem;}
+section .start-btn a[href='javascript:void(0)']{background: #09bb07;opacity: .58}
+.goback-btn{margin:0.3rem auto 0;width: 9.2rem;height: 1.2rem;}
+.goback-btn a{display: block;width:100%;height:100%;font-size: 17px;border-radius: 5px;text-align: center;line-height: 1.2rem;background: #fff;border:1px solid #d5d4d6;color: #333;box-sizing: border-box;}
+.media{display: none;position: fixed;width: 100%;height: 100%;background: url(../images/zhezhao.png) no-repeat;background-size: 100% 100%;top:0;left:0;}
+/*底部*/
+footer{text-align: center;margin-top: 0.5rem;}
+footer p{font-size: 14px;color: #999;margin-bottom: 0.1rem;}
+
+
+
+
+
